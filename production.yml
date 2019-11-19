@@ -1,0 +1,46 @@
+version: "3"
+
+volumes:
+  production_postgres_data: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: compose/production/django/Dockerfile
+    image: bookcrud_django
+    env_file:
+      - ./.envs/.production
+    depends_on:
+      - postgres
+    command: /start
+
+  nuxt:
+    build:
+      context: .
+      dockerfile: compose/production/nuxt/Dockerfile
+    image: bookcrud_nuxt
+
+  nginx:
+    build:
+      context: .
+      dockerfile: compose/production/nginx/Dockerfile
+    image: bookcrud_nginx
+    env_file:
+      - ./.envs/.production
+    depends_on:
+      - django
+      - nuxt
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
+
+  postgres:
+    build:
+      context: .
+      dockerfile: compose/production/postgres/Dockerfile
+    image: bookcrud_postgres
+    env_file:
+      - ./.envs/.production
+    volumes:
+      - production_postgres_data:/var/lib/postgresql/data

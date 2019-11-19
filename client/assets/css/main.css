@@ -1,0 +1,74 @@
+/* ------------------------------------------------------------------------------
+  GENERAL
+------------------------------------------------------------------------------ */
+a {
+  color: dodgerblue;
+}
+
+/* ------------------------------------------------------------------------------
+  FONTS
+------------------------------------------------------------------------------ */
+/* open-sans-regular - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/open-sans-v17-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url("/fonts/open-sans-v17-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/open-sans-v17-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/open-sans-v17-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("/fonts/open-sans-v17-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/open-sans-v17-latin-regular.svg#OpenSans") format("svg"); /* Legacy iOS */
+}
+
+/* ------------------------------------------------------------------------------
+  FORMS
+------------------------------------------------------------------------------ */
+input {
+  border-radius: 8px;
+  border: 1px solid #d3d5d8;
+  padding: 10px 10%;
+  margin-bottom: 5px;
+  background-color: #f8f9f9;
+  width: 80%;
+}
+input::placeholder {
+  color: #a9abb1;
+}
+input.error {
+  border: 1px solid #ec226e;
+}
+button {
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  padding: 8px 16px;
+}
+button[type="submit"] {
+  margin-top: 5px;
+  padding: 8px 16px;
+  background-color: #8bb34a;
+  color: white;
+}
+button[type="submit"]:hover {
+  background-color: #a8d75c;
+}
+.error-list ul {
+  padding: 0px;
+  margin: 2px 0px;
+}
+.error-list ul li {
+  padding: 0px;
+  list-style: none;
+  font-size: 12px;
+  color: #ec226e;
+}
+.non-field-errors {
+  margin-bottom: 10px;
+}

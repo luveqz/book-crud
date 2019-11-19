@@ -1,0 +1,53 @@
+version: "3"
+
+volumes:
+  local_postgres_data: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: bookcrud_django
+    depends_on:
+      - postgres
+    volumes:
+      - ./api:/app
+    env_file:
+      - ./.envs/.local
+    ports:
+      - "127.0.0.1:8000:8000"
+    command: /start
+
+  nuxt:
+    build:
+      context: .
+      dockerfile: compose/local/nuxt/Dockerfile
+    image: bookcrud_nuxt
+    volumes:
+      - ./client:/app
+    env_file:
+      - ./.envs/.local
+
+  nginx:
+    build:
+      context: .
+      dockerfile: compose/local/nginx/Dockerfile
+    image: bookcrud_nginx
+    depends_on:
+      - nuxt
+      - django
+    env_file:
+      - ./.envs/.local
+    ports:
+      - "127.0.0.1:80:80"
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: bookcrud_postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+    env_file:
+      - ./.envs/.local

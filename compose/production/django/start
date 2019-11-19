@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+reload_arg=""
+if [ $STAGING_ENV != "False" ]; then reload_arg="--reload"; fi
+
+python manage.py migrate
+python manage.py collectstatic --noinput
+gunicorn config.wsgi --bind 0.0.0.0:8000 --chdir=/app $reload_arg

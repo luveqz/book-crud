@@ -1,0 +1,45 @@
+# ------------------------------------------------------------------------------
+# GENERAL
+# ------------------------------------------------------------------------------
+SERVER_NAME=example.co
+
+
+# ------------------------------------------------------------------------------
+# SSL CERTIFICATE GENERATION
+# ------------------------------------------------------------------------------
+# Set to "True" if you're testing your setup to avoid hitting request limits.
+STAGING_ENV=True
+ADMIN_EMAIL=admin@example.co
+RSA_KEY_SIZE=4096
+
+
+# ------------------------------------------------------------------------------
+# DJANGO
+# ------------------------------------------------------------------------------
+DJANGO_SETTINGS_MODULE=config.settings.production
+DJANGO_SECRET_KEY=TolvS09nTtHCbZfxzK3jACFKmY7me8QBdvHthpu57vtSdgHU7eLHZvogV5g5BGN7
+DJANGO_ADMIN_URL=kRMRsDUCs8FGNI3gj2qfSlITfsQPUqMx/
+DJANGO_ALLOWED_HOSTS=django,api,localhost
+DJANGO_DEBUG=True
+
+
+# ------------------------------------------------------------------------------
+# SECURITY
+# ------------------------------------------------------------------------------
+DJANGO_SECURE_SSL_REDIRECT=False
+
+
+# ------------------------------------------------------------------------------
+# GUNICORN
+# ------------------------------------------------------------------------------
+WEB_CONCURRENCY=4
+
+
+# ------------------------------------------------------------------------------
+# POSTGRESQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=bookcrud
+POSTGRES_USER=UIOkIEyn1Yi7tpDMMc8Zkq85DDEY
+POSTGRES_PASSWORD=nnUkoUIOkIEyn1Yi7tpDMMc8Zkq85DDEYlcO9EKhJouPjbUlsBz1FY7e8Ky3aXwE

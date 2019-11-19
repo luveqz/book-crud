@@ -1,0 +1,42 @@
+# ------------------------------------------------------------------------------
+# GENERAL
+# ------------------------------------------------------------------------------
+SERVER_NAME=localhost
+
+
+# ------------------------------------------------------------------------------
+# DJANGO
+# ------------------------------------------------------------------------------
+DJANGO_SETTINGS_MODULE=config.settings.local
+DJANGO_SECRET_KEY=TolvS09nTtHCbZfxzK3jACFKmY7me8QBdvHthpu57vtSdgHU7eLHZvogV5g5BGN7
+DJANGO_ADMIN_URL=kRMRsDUCs8FGNI3gj2qfSlITfsQPUqMx/
+DJANGO_ALLOWED_HOSTS=django,api,localhost
+DJANGO_DEBUG=True
+
+
+# ------------------------------------------------------------------------------
+# SECURITY
+# ------------------------------------------------------------------------------
+DJANGO_SECURE_SSL_REDIRECT=False
+
+
+# ------------------------------------------------------------------------------
+# GUNICORN
+# ------------------------------------------------------------------------------
+WEB_CONCURRENCY=4
+
+
+# ------------------------------------------------------------------------------
+# POSTGRESQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=bookcrud
+POSTGRES_USER=NrIcNlBbaQTkKmUQXqqgYFrrEWKOitza
+POSTGRES_PASSWORD=Bae45XR3eAjpZJjvAB9dwvO8GRgRCWjDN3t7oQG1iXFEny7W5WmMfZ5cZ744uCyd
+
+
+# ------------------------------------------------------------------------------
+# NUXT
+# ------------------------------------------------------------------------------
+LOCAL_ENV=True

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+
+# Enable staging mode if needed.
+test_cert_arg=""
+if [ $STAGING_ENV == "True" ] && [ "$STAGING_ENV" == 'True' ]; then
+test_cert_arg="--test-cert"
+fi
+
+# Generate and setup Let's Encrypt certificate.
+certbot certonly --nginx \
+        -d $SERVER_NAME \
+        --rsa-key-size $RSA_KEY_SIZE \
+        --agree-tos \
+        --force-renewal \
+        --email $ADMIN_EMAIL \
+        --no-eff-email \
+        --no-redirect \
+        $test_cert_arg
+
+nginx -s stop 
+
+sleep 2s
+
+# Set nginx configuration with env variables.
+envsubst '${SERVER_NAME}' < /templates/nginx.conf > /etc/nginx/nginx.conf
+
+exec "$@"

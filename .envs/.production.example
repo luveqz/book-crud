@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
 # GENERAL
 # ------------------------------------------------------------------------------
-SERVER_NAME=example.co
+SERVER_NAME=example.com
 
 
 # ------------------------------------------------------------------------------
@@ -9,7 +9,7 @@ SERVER_NAME=example.co
 # ------------------------------------------------------------------------------
 # Set to "True" if you're testing your setup to avoid hitting request limits.
 STAGING_ENV=True
-ADMIN_EMAIL=admin@example.co
+ADMIN_EMAIL=admin@example.com
 RSA_KEY_SIZE=4096
 
 

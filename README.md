@@ -64,7 +64,7 @@ cd bookcrud
 docker-compose -p production.yml up --build
 ```
 
-**Note**: set `STAGING_ENV` to `False` to request a production Let's Encrypt certificate. If your just testing, the default (`True`) will prevent hitting [rate limits][staging-env] too early.
+**Note**: set `STAGING_ENV` to `False` to request a production Let's Encrypt certificate. If you're just testing, the default (`True`) will prevent hitting [rate limits][staging-env] too early.
 
 [drf]: https://www.django-rest-framework.org "Django Rest Framework"
 [nuxt]: https://nuxtjs.org "Nuxt.js"

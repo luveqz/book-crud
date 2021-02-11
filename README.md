@@ -25,7 +25,7 @@ git clone https://github.com/luvejo/bookcrud
 cd bookcrud
 
 # 3. Build and run.
-docker-compose -p local.yml up --build
+docker-compose -f local.yml up --build
 ```
 
 Go to http://127.0.0.1.
@@ -61,7 +61,7 @@ git clone https://github.com/luvejo/bookcrud
 cd bookcrud
 
 # 4. Build and run.
-docker-compose -p production.yml up --build
+docker-compose -f production.yml up --build
 ```
 
 **Note**: set `STAGING_ENV` to `False` to request a production Let's Encrypt certificate. If you're just testing, the default (`True`) will prevent hitting [rate limits][staging-env] too early.
